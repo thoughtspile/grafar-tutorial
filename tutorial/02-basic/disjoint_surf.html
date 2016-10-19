@@ -1,0 +1,30 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+	<title>testbox</title>
+
+	<link rel="stylesheet" type="text/css" href="stylesheets/testbox_style.css" media="screen" />
+
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+</head>
+
+<body>
+	<div id="render"></div>
+
+	<script type="text/javascript" src="../build/grafar.js"></script>
+	<script type="text/javascript">
+        var pan3d = new grafar.Panel(document.getElementById('render'));
+
+        var i = grafar.set([ -1, 1 ]).select();
+        var t = grafar.range(-5, 5, 30).select();
+        var p = grafar.range(0, 5, 30).select();
+
+		var y = grafar.map([ i, t, p ], (i, t, p) => t + i * p);
+        var z = grafar.map([ t, y ], (t, y) => 1 / (t - y));
+
+		grafar.pin([ t, y, z ], pan3d);
+	</script>
+
+	</body>
+</html>
