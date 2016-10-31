@@ -20,7 +20,7 @@ const template = (locals) => `
     </head>
     <body>
       ${ locals.body }
-      <script src='../../node_modules/grafar/build/grafar.js'></script>
+      <script src='../../lib/grafar.js'></script>
       <script src='../../build/${ locals.scriptPath }'></script>
     </body>
   </html>

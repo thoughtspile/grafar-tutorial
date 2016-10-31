@@ -15,7 +15,7 @@
     <body>
       // еще никак
 
-      <script src='../../node_modules/grafar/build/grafar.js'></script>
+      <script src='../../lib/grafar.js'></script>
       <script src='../../build/03.dynamic/03.sync.js'></script>
     </body>
   </html>
