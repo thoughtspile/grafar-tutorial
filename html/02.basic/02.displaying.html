@@ -1,17 +1,25 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <div id='render' style='height: 400px; width: 400px;'></div>
-    <select id='type'>
-      <option value='color'>разноцветный</option>
-      <option value='plain'>простой</option>
-    </select>
 
-    <script src='../../node_modules/grafar/build/grafar.js'></script>
-    <script src='../../build/02.basic/02.displaying.js'></script>
-  </body>
-</html>
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="utf-8">
+      <title>02.displaying.html</title>
+      <style>
+        .panel {
+          width: 400px;
+          height: 400px;
+          display: inline-block;
+        }
+      </style>
+    </head>
+    <body>
+      <div id='render' style='height: 400px; width: 400px;'></div>
+<select id='type'>
+  <option value='color'>разноцветный</option>
+  <option value='plain'>простой</option>
+</select>
+
+      <script src='../../node_modules/grafar/build/grafar.js'></script>
+      <script src='../../build/02.basic/02.displaying.js'></script>
+    </body>
+  </html>

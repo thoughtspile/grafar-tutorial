@@ -1,14 +1,22 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <div id='render' style='height: 400px; width: 400px;'></div>
-    <input type='number' id='ctrl__p' value='0' step='0.05'></input>
 
-    <script src='../../node_modules/grafar/build/grafar.js'></script>
-    <script src='../../build/03.dynamic/02.controls.js'></script>
-  </body>
-</html>
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="utf-8">
+      <title>02.controls.html</title>
+      <style>
+        .panel {
+          width: 400px;
+          height: 400px;
+          display: inline-block;
+        }
+      </style>
+    </head>
+    <body>
+      <div class='panel' id='render' style='height: 400px; width: 400px;'></div>
+<input type='number' id='ctrl__p' value='0' step='0.05'></input>
+
+      <script src='../../node_modules/grafar/build/grafar.js'></script>
+      <script src='../../build/03.dynamic/02.controls.js'></script>
+    </body>
+  </html>
