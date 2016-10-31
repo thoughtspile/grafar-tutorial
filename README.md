@@ -1,7 +1,12 @@
 #grafar-tutorial
 
-16 прекрасных примеров, которые сделают вас мастером графара. Скачайте их архивом:
+16 прекрасных примеров, которые сделают вас мастером графара.
+
+Скачайте их архивом:
 https://github.com/thoughtspile/grafar-tutorial/archive/master.zip
+
+Или посмотрите прямо сейчас:
+https://thoughtspile.github.io/grafar-tutorial/
 
 ## По папкам:
 
