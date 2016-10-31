@@ -1,37 +1,41 @@
-"use strict";
+'use strict';
 
 // ** Обертки **
 
 // Обернуть одно число
-var constant = grafar.constant(0).select();
+var gens = [grafar.constant(0).select(),
 
 // Обернуть множество чисел
-var set = grafar.set([0, 1, 2]).select();
+grafar.set([-1, 0, 1]).select(),
 // Несмотря на название, элементы никак не проверяются на уникальность:
-var nonset = grafar.set([0, 0, 0]).select();
+// grafar.set([0, 0, 0]).select()
 // Массив копируется, и от изменения вашей копии в графаре ничего не поменяется:
-var outer = [1, 2];
-var grafarCopy = grafar.set(outerSet).select();
+// const outer = [1, 2];
+// const grafarCopy = grafar.set(outerSet).select();
 
 // ** Явные генераторы **
 
 // Классика: seq(a, b, n) генерирует n точек, расположенных равномерно на
 // отрезке [a, b], включая границы. Точки никак не соединяются, то есть изображаем
 // { a + i * (b - a) / (n - 1) | i = 0..n }.
-var seq = grafar.seq(0, 1, 20).select();
+grafar.seq(-1, 1, 20).select(),
 
 // Те же точки, но соединенные (получается отрезок)
-var range = grafar.range(0, 1, 20).select();
+grafar.range(-1, 1, 20).select(),
 
 // Логарифмическая последовательность: ближе к a больше точек.
 // Если интересуетесь, { a + log(i) * (b - a) / log(n)) * (b - a) | i = 0..n }
 // Полезно, чтобы потом применить к этому отображение, сильнее искревлённое около a
-var logseq = grafar.logseq(0, 1, 20).select();
+grafar.logseq(-1, 1, 20).select(),
 
 // Целые числа между a и b, включая границы.
-var ints = grafar.ints(0, 5);
-// Правильно обрабатывает сомнительные случаи:
-var ints5 = grafar.ints(-.3, 5.9);
+grafar.ints(-2, 2).select()];
+
+grafar.setup({ particleRadius: .2 });
+var pan = new grafar.Panel(document.getElementById('render')).setAxes(['x', 'y']);
+gens.forEach(function (gen, i) {
+  grafar.pin([gen, grafar.constant((i - 3) / 2).select()], pan);
+});
 
 // ** Неявный генератор **
 
@@ -44,7 +48,7 @@ function (v) {
 // Сколько решений найти
 1000,
 // Размерность объекта. Сейчас строим неявную поверхность на плоскости, так что 2.
-2);
+2).select();
 // Техническая минутка. Решение выглядит как куча точек, случайно расположенных
 // в разных нулях функции. Закрашенную поверхность или линию таким образом построить
 // не получится. Если получается жиденько, увеличьте второй параметр -- можно
@@ -58,3 +62,6 @@ function (v) {
 //    - Находит решения неожиданной топологической размерности: например, неявные
 //      кривые и точки в R^3 (x^2 + y^2 + z^2 == 0).
 //  3. Решает уравнения в пространстве любой размерности (но комбинаторный взрыв догоняет)
+
+var iPan = new grafar.Panel(document.getElementById('implicit')).setAxes(['x', 'y']);
+grafar.pin(circle, iPan);
